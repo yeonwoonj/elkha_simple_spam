@@ -29,7 +29,7 @@ if(!preg_match('#<a\s|https?://#is', $_content)) return;
 
 $email_address = strlen($addon_info->email_address)? "(\n$addon_info->email_address)" : '';
 
-$output = new object(-1, "스팸으로 의심되어 등록이 보류되었습니다.\n관리자 메일주소로 문의주시길 바랍니다.$email_address");
+$output = new BaseObject(-1, "스팸으로 의심되어 등록이 보류되었습니다.\n관리자 메일주소로 문의주시길 바랍니다.$email_address");
 $oDisplayHandler = new DisplayHandler();
 $oDisplayHandler->printContent($output);
 exit;
