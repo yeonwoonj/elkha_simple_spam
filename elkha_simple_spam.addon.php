@@ -21,6 +21,9 @@ else
 $_content .= Context::get('title');
 $_content .= $nick_name;
 
+# crop alt and title attr
+$_content = preg_replace(' /(alt|title)=".*?"/', '', $_content);
+
 if(preg_match('/[ㄱ-ㅣ가-힣]/u', $_content)) return;
 if(!preg_match('#<a\s|https?://#is', $_content)) return;
 
